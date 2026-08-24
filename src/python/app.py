@@ -6,13 +6,13 @@ Gunicorn.
 
 import requests
 from flask import Flask, Response, jsonify, request, stream_with_context
-
+from flask_cors import CORS
 from discovery import nicheness_plan
 from lastfm import fetch_lastfm_page
 from tracks import stream_tracks
 
 app = Flask(__name__)
-
+CORS(app, origins=[r"https://.*\.pages\.dev"])
 
 @app.route("/api/tracks")
 def search():
@@ -39,7 +39,7 @@ def search():
     )
 
 
-# TODO: cache retrieved songs over time.
+ 
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000, threaded=True)

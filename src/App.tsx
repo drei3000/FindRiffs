@@ -7,6 +7,7 @@ import SearchButton from './components/SearchButton'
 import TrackList, { type Track } from './components/Tracklist'
 
 const ANY_TUNING = 'No Selection'
+const API_BASE = import.meta.env.VITE_API_URL ?? ''
 
 const GENRES: Option[] = [
   'Metalcore',
@@ -161,7 +162,7 @@ function App() {
     })
 
     try {
-      const res = await fetch(`/api/tracks?${params.toString()}`, {
+      const res = await fetch(`${API_BASE}/api/tracks?${params.toString()}`, {
         signal: controller.signal,
       })
 
