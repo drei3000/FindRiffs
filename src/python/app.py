@@ -12,7 +12,7 @@ from lastfm import fetch_lastfm_page
 from tracks import stream_tracks
 
 app = Flask(__name__)
-CORS(app, origins=[r"https://.*\.pages\.dev"])
+CORS(app, origins=["https://findriffs.andreicalota0305.workers.dev"])
 
 @app.route("/api/tracks")
 def search():
