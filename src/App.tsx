@@ -207,7 +207,7 @@ function App() {
     }
   }
 
-  const filtering = Boolean(tuning) && tuning !== ANY_TUNING
+   
 
   return (
     <>
@@ -233,12 +233,7 @@ function App() {
             loading={loading}
           />
 
-          {loading && (
-            <p className="font-display text-center text-[20px] tracking-wide text-black/60">
-              {allTracks.length} checked
-              {filtering && ` · ${visibleTracks.length} in ${tuningLabel(tuning)}`}
-            </p>
-          )}
+  
 
           {!loading && hasSearched && allTracks.length > 0 && visibleTracks.length === 0 && (
             <p className="font-display text-center text-[20px] tracking-wide text-black/60">
